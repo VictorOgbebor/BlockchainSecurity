@@ -11,13 +11,14 @@ contract Escrow {
 
   // when user deploys contract they will assign them...releaser will be the one who controls the funds to be released. ie: real estate inspector or lawyer
   constructor(
+        address _releaser,
     address _payer,
     address payable _payee,
     uint256 _amount
   ) {
+    releaser = _releaser; // deployer
     payer = _payer;
     payee = _payee;
-    releaser = msg.sender; // deployer
     amount = _amount;
   }
 

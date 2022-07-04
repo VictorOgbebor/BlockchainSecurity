@@ -13,7 +13,7 @@ jobs:
       uses: actions/setup-node@v2.1.4
     
     - name: Install Node dependencies
-      run: npm install
+      run: yarn add
       
     - name: Run Tests
-      run: npx truffle test
+      run: yarn hardhat test
