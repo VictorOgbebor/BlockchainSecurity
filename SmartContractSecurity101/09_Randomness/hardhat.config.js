@@ -26,7 +26,7 @@ module.exports = {
   networks: {
     hardhat: {
       initialBaseFeePerGas: 0,
-      blockGasLimit: 20000000
+      // blockGasLimit: 20000000
     },
     ropsten: {
       url: process.env.ROPSTEN_URL || "",

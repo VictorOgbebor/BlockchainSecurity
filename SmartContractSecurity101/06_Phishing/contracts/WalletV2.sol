@@ -3,15 +3,15 @@ pragma solidity ^0.8.9;
 
 import "hardhat/console.sol";
 
-contract Wallet {
+contract WalletV2 {
   address public owner;
 
   constructor() {
-    owner = tx.origin;
+    owner = msg.sender;
   }
 
   function withdrawAll(address reciever) external {
-    require(tx.origin == owner, "Caller not authorized");
+    require(msg.sender == owner, "Caller not authorized");
     payable(reciever).transfer(address(this).balance);
   }
 

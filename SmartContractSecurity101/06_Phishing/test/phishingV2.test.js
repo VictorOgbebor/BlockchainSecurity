@@ -7,7 +7,7 @@ describe("Phishing", function () {
   beforeEach(async function () {
     [deployer, attacker, user] = await ethers.getSigners();
 
-    const Wallet = await ethers.getContractFactory("Wallet", deployer);
+    const Wallet = await ethers.getContractFactory("WalletV2", deployer);
     this.Wallet = await Wallet.deploy();
 
     await deployer.sendTransaction({ to: this.Wallet.address, value: 10000 });
